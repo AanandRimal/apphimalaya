@@ -82,11 +82,12 @@ button { cursor: pointer; }
 .hero-display { font-size: clamp(2.6rem, 10.5vw, 9.5rem); }
 
 /* ---- The one orchestrated moment: the headline assembling on load ---- */
+.hl-tail { white-space: nowrap; }
+
 .hl-word {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  margin-right: 0.22em;
   padding-bottom: 0.16em;
   margin-bottom: -0.16em;
   vertical-align: bottom;
@@ -106,7 +107,6 @@ button { cursor: pointer; }
   vertical-align: bottom;
   padding-bottom: 0.16em;
   margin-bottom: -0.16em;
-  margin-left: -0.22em;
   color: var(--accent);
   opacity: 0;
   transform: translateX(1.9em) scale(0.35);
