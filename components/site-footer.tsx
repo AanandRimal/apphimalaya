@@ -25,6 +25,9 @@ export function SiteFooter() {
               </a>
             </div>
             <div className="flex flex-col gap-3">
+              <a href={`tel:+${site.whatsapp}`} className="text-muted-foreground transition-colors hover:text-foreground">
+                {site.phone}
+              </a>
               <a href={`mailto:${site.email}`} className="text-muted-foreground transition-colors hover:text-foreground">
                 {site.email}
               </a>

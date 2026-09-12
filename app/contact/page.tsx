@@ -90,6 +90,12 @@ export default function Contact() {
             <div className="mt-6 flex flex-col items-start gap-4">
               <WhatsappLink className="bg-card" />
               <a
+                href={`tel:+${site.whatsapp}`}
+                className="border-b border-border pb-1 text-[0.95rem] transition-colors hover:border-accent hover:text-accent"
+              >
+                {site.phone}
+              </a>
+              <a
                 href={`mailto:${site.email}`}
                 className="border-b border-border pb-1 text-[0.95rem] transition-colors hover:border-accent hover:text-accent"
               >

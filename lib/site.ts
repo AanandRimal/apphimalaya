@@ -2,8 +2,9 @@
 export const site = {
   name: 'apphimalaya.com',
   email: 'hello@apphimalaya.com',
-  // TODO: replace with the real number — digits only, country code first, no + or spaces.
-  whatsapp: '9779800000000',
+  // wa.me needs digits only: country code first, no + and no spaces.
+  whatsapp: '9779849779958',
+  phone: '+977 9849779958',
   location: 'Kathmandu, Nepal',
 }
 
