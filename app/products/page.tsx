@@ -6,9 +6,16 @@ import { SiteHeader } from '@/components/site-header'
 import { WhatsappLink } from '@/components/whatsapp-link'
 
 export const metadata: Metadata = {
-  title: 'Products — apphimalaya.com',
+  title: 'Our Products',
   description:
-    'Alongside client work we run proofs of concept, validate ideas against real users, and build the ones that hold. The first products are coming.',
+    'Alongside client work, App Himalaya runs proofs of concept, validates ideas against real users, and builds the ones that hold. Our first products are coming soon.',
+  alternates: { canonical: '/products' },
+  openGraph: {
+    title: 'Products | App Himalaya',
+    description:
+      'Proofs of concept, validated ideas, and the products we are building of our own. Coming soon.',
+    url: '/products',
+  },
 }
 
 const pipeline = [

@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react'
+import type { Metadata } from 'next'
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react'
 import { HeroHeadline, letterCount } from '@/components/hero-headline'
 import { RevealOnScroll } from '@/components/reveal'
@@ -8,6 +9,10 @@ import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
 import { WhatsappLink } from '@/components/whatsapp-link'
 import { industries } from '@/lib/site'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 const HERO = ['Build the', 'unbelievable']
 

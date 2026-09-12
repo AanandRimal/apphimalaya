@@ -8,9 +8,16 @@ import { WhatsappLink } from '@/components/whatsapp-link'
 import { site } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'About — apphimalaya.com',
+  title: 'About Us — Engineers in Kathmandu, Nepal',
   description:
-    'A software company in Kathmandu working with teams worldwide: legacy modernization, contract engineering, and products of our own.',
+    'App Himalaya is a software company in Kathmandu, Nepal. We look after the systems large companies depend on, join teams that need senior engineers, and build products of our own.',
+  alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About App Himalaya — Software Engineers in Kathmandu',
+    description:
+      'A software company in Kathmandu, Nepal, building for teams anywhere. Not just an outsourcing partner.',
+    url: '/about',
+  },
 }
 
 const beliefs = [

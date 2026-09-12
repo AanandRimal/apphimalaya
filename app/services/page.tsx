@@ -7,9 +7,16 @@ import { WhatsappLink } from '@/components/whatsapp-link'
 import { industries } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Capabilities — apphimalaya.com',
+  title: 'Software Development Services in Nepal',
   description:
-    'Legacy modernization, contract engineering teams, new product builds, and applied AI — for companies in any industry.',
+    'Legacy system modernization, contract engineering teams, product engineering, proofs of concept and applied AI — delivered from Kathmandu for clients in any industry.',
+  alternates: { canonical: '/services' },
+  openGraph: {
+    title: 'Software Development Services | App Himalaya, Nepal',
+    description:
+      'Legacy modernization, contract engineering teams, product builds, POCs and applied AI, from a software company in Kathmandu.',
+    url: '/services',
+  },
 }
 
 const offers = [
