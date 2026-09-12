@@ -1,0 +1,172 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-deep: var(--deep);
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --radius-sm: 0rem;
+  --radius-md: 0rem;
+  --radius-lg: 0rem;
+  --radius-xl: 0rem;
+}
+
+/* Pine and snow. Green carries the whole palette; value contrast does the rest. */
+:root {
+  color-scheme: dark;
+  --background: oklch(0.155 0.02 162);
+  --foreground: oklch(0.965 0.008 160);
+  --card: oklch(0.205 0.024 162);
+  --card-foreground: oklch(0.965 0.008 160);
+  --popover: oklch(0.205 0.024 162);
+  --popover-foreground: oklch(0.965 0.008 160);
+  --primary: oklch(0.955 0.008 168);
+  --primary-foreground: oklch(0.17 0.028 160);
+  --deep: oklch(0.325 0.068 158);
+  --secondary: oklch(0.255 0.028 160);
+  --secondary-foreground: oklch(0.965 0.008 160);
+  --muted: oklch(0.235 0.026 160);
+  --muted-foreground: oklch(0.715 0.02 160);
+  --accent: oklch(0.8 0.155 140);
+  --accent-foreground: oklch(0.19 0.045 158);
+  --destructive: oklch(0.62 0.19 25);
+  --border: oklch(0.965 0.008 160 / 14%);
+  --input: oklch(0.965 0.008 160 / 14%);
+  --ring: oklch(0.8 0.155 140);
+}
+
+* { @apply border-border outline-ring/50; box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--background); }
+body { @apply bg-background text-foreground antialiased; }
+::selection { background: var(--accent); color: var(--accent-foreground); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+
+/* Type system: one family, two widths. Expanded for display, normal for reading. */
+.display {
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+  text-wrap: balance;
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+}
+.lede { max-width: 34rem; font-size: 1.125rem; line-height: 1.75; }
+.hero-display { font-size: clamp(2.6rem, 10.5vw, 9.5rem); }
+
+/* ---- The one orchestrated moment: the headline assembling on load ---- */
+.hl-word {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: 0.22em;
+  padding-bottom: 0.16em;
+  margin-bottom: -0.16em;
+  vertical-align: bottom;
+}
+.hl-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(108%) rotate(7deg);
+  animation: letter-rise 1s cubic-bezier(0.17, 0.85, 0.2, 1) forwards;
+  animation-delay: calc(var(--i) * 38ms + 120ms);
+}
+@keyframes letter-rise { to { opacity: 1; transform: none; } }
+
+/* The dot arrives last, travelling in from the right and overshooting into place. */
+.hl-dot {
+  display: inline-block;
+  vertical-align: bottom;
+  padding-bottom: 0.16em;
+  margin-bottom: -0.16em;
+  margin-left: -0.22em;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateX(1.9em) scale(0.35);
+  animation:
+    dot-land 1.15s cubic-bezier(0.2, 1.25, 0.3, 1) calc(var(--i) * 38ms + 240ms) forwards,
+    dot-orbit 5s linear calc(var(--i) * 38ms + 1500ms) infinite;
+}
+@keyframes dot-land { 35% { opacity: 1; } to { opacity: 1; transform: none; } }
+
+/* A slow circle that starts and ends where the dot landed, so the loop never jumps. */
+@keyframes dot-orbit {
+  0% { transform: translate(0, 0); }
+  12.5% { transform: translate(0.035em, -0.015em); }
+  25% { transform: translate(0.05em, -0.05em); }
+  37.5% { transform: translate(0.035em, -0.085em); }
+  50% { transform: translate(0, -0.1em); }
+  62.5% { transform: translate(-0.035em, -0.085em); }
+  75% { transform: translate(-0.05em, -0.05em); }
+  87.5% { transform: translate(-0.035em, -0.015em); }
+  100% { transform: translate(0, 0); }
+}
+
+.hl-before {
+  opacity: 0;
+  animation: rise 700ms cubic-bezier(0.17, 0.85, 0.2, 1) 60ms forwards;
+}
+
+.hl-after {
+  opacity: 0;
+  animation: rise 900ms cubic-bezier(0.17, 0.85, 0.2, 1) forwards;
+  animation-delay: calc(var(--i) * 38ms + 520ms);
+}
+@keyframes rise { from { transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+.reveal-ready .reveal { opacity: 0; transform: translateY(26px); transition: opacity 800ms ease, transform 800ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+.reveal-ready .reveal.is-visible { opacity: 1; transform: none; }
+.delay-2 { transition-delay: 160ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hl-letter, .hl-dot, .hl-before, .hl-after { animation: none; opacity: 1; transform: none; }
+  .reveal-ready .reveal, .reveal-ready .reveal.is-visible { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklch, var(--border) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklch, var(--border) 55%, transparent) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to right, black, transparent 74%);
+}
+
+/* Ridgeline: the Himalaya as a drawn contour, not a picture of a mountain. */
+.ridge { color: color-mix(in oklch, var(--accent) 38%, transparent); }
+.ridge-faint { color: color-mix(in oklch, var(--foreground) 11%, transparent); }
+
+@utility text-balance { text-wrap: balance; }
+@utility text-pretty { text-wrap: pretty; }
+
+* { scrollbar-color: var(--accent) var(--background); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: var(--accent); }
