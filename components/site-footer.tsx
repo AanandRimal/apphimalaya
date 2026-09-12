@@ -7,7 +7,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
           <div>
             <p className="text-[0.95rem] font-semibold tracking-tight">
-              apphimalaya<span className="text-muted-foreground">.com</span>
+              apphimalaya<span className="text-muted-foreground">.com.np</span>
             </p>
             <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
               Software built in {site.location}, for teams anywhere.
@@ -43,7 +43,7 @@ export function SiteFooter() {
           </div>
         </div>
         <p className="mt-14 border-t border-border pt-6 text-sm text-muted-foreground">
-          © {new Date().getFullYear()} apphimalaya.com
+          © {new Date().getFullYear()} apphimalaya.com.np
         </p>
       </div>
     </footer>

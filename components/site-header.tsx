@@ -15,7 +15,7 @@ export function SiteHeader() {
       <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 lg:px-10">
         <a href="/" className="text-[0.95rem] font-semibold tracking-tight">
-          apphimalaya<span className="text-muted-foreground">.com</span>
+          apphimalaya<span className="text-muted-foreground">.com.np</span>
         </a>
         <nav className="hidden gap-8 font-mono text-[10px] uppercase tracking-widest text-muted-foreground lg:flex">
           {nav.map(([href, label]) => (

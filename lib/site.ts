@@ -17,7 +17,7 @@ export const site = {
   legalName: 'App Himalaya',
   url: siteUrl,
   tagline: 'Build the unbelievable.',
-  email: 'hello@apphimalaya.com',
+  email: 'hello@apphimalaya.com.np',
   // wa.me needs digits only: country code first, no + and no spaces.
   whatsapp: '9779849779958',
   phone: '+977 9849779958',

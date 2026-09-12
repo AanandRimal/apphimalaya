@@ -105,7 +105,7 @@ const siteSchema = {
       '@id': `${siteUrl}#organization`,
       name: site.name,
       legalName: site.legalName,
-      alternateName: ['apphimalaya', 'apphimalaya.com', 'App Himalaya Nepal'],
+      alternateName: ['apphimalaya', 'apphimalaya.com.np', 'App Himalaya Nepal'],
       url: siteUrl,
       slogan: site.tagline,
       email: site.email,
