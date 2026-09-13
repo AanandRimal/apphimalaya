@@ -79,10 +79,13 @@ export const metadata: Metadata = {
     ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
     : undefined,
   icons: {
+    // icon.svg used to be listed here too. Chrome prefers an SVG favicon over
+    // PNG media-query variants regardless of list order, so as long as it was
+    // present the stock v0.dev mark kept winning the tab icon no matter what
+    // the PNGs said. It was that same placeholder mark, never replaced.
     icon: [
       { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
       { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
     ],
     apple: '/apple-icon.png',
   },
